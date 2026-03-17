@@ -1,0 +1,66 @@
+<svg width="1400" height="420" viewBox="0 0 1400 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueGrad" x1="50" y1="80" x2="350" y2="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5B7CFF"/>
+      <stop offset="1" stop-color="#315CF6"/>
+    </linearGradient>
+    <linearGradient id="violetGrad" x1="200" y1="90" x2="360" y2="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8F7BFF"/>
+      <stop offset="1" stop-color="#6C47FF"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="115" y1="290" x2="260" y2="325" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A4E635"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="150" y1="225" x2="185" y2="225" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#B8F33C"/>
+      <stop offset="1" stop-color="#64D22F"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="205" y1="200" x2="240" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6AF0B7"/>
+      <stop offset="1" stop-color="#34C9FF"/>
+    </linearGradient>
+    <linearGradient id="bar3" x1="260" y1="178" x2="295" y2="178" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#43D4FF"/>
+      <stop offset="1" stop-color="#2F7BFF"/>
+    </linearGradient>
+    <linearGradient id="textGradLight" x1="455" y1="115" x2="1040" y2="315" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#49A3FF"/>
+      <stop offset="0.45" stop-color="#2D63F5"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <filter id="softShadow" x="0" y="0" width="420" height="380" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#1E293B" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#softShadow)">
+    <circle cx="104" cy="121" r="20" fill="url(#blueGrad)"/>
+    <circle cx="310" cy="118" r="20" fill="url(#violetGrad)"/>
+
+    <path d="M120 146C88 165 66 200 66 244C66 302 115 340 184 340C133 318 108 282 108 238C108 203 124 171 156 145C147 145 134 145 120 146Z" fill="url(#blueGrad)"/>
+    <path d="M294 146C326 165 348 200 348 244C348 302 299 340 230 340C281 318 306 282 306 238C306 203 290 171 258 145C267 145 280 145 294 146Z" fill="url(#violetGrad)"/>
+    <path d="M98 286C126 318 174 336 222 336C179 349 123 345 84 308C89 300 93 292 98 286Z" fill="url(#greenGrad)"/>
+
+    <path d="M138 178L207 120L276 178V274H138V178Z" fill="#FFFFFF" stroke="#D8E2F2" stroke-width="2"/>
+    <path d="M122 175L207 106L292 175" stroke="url(#blueGrad)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M140 178L207 125L274 178" stroke="#173A8F" stroke-opacity="0.16" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="154" y="238" width="34" height="58" rx="6" fill="url(#bar1)"/>
+    <rect x="206" y="204" width="34" height="92" rx="6" fill="url(#bar2)"/>
+    <rect x="258" y="172" width="34" height="124" rx="6" fill="url(#bar3)"/>
+
+    <rect x="184" y="158" width="18" height="18" rx="2" fill="#FFC83D"/>
+    <rect x="206" y="158" width="18" height="18" rx="2" fill="#FFD35C"/>
+    <rect x="184" y="180" width="18" height="18" rx="2" fill="#FFC83D"/>
+    <rect x="206" y="180" width="18" height="18" rx="2" fill="#FFD35C"/>
+
+    <path d="M140 150C124 145 112 142 95 144" stroke="#B9D9FF" stroke-width="10" stroke-linecap="round"/>
+    <path d="M274 150C290 145 302 142 319 144" stroke="#D0C3FF" stroke-width="10" stroke-linecap="round"/>
+    <path d="M170 86L176 102L192 108L176 114L170 130L164 114L148 108L164 102L170 86Z" fill="#FFD646"/>
+  </g>
+
+  <text x="430" y="245" font-family="Inter, Poppins, Arial, sans-serif" font-size="112" font-weight="700" fill="url(#textGradLight)" letter-spacing="-2">
+    Family Finance
+  </text>
+</svg>
