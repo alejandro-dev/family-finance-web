@@ -1,6 +1,13 @@
 import { requireUser } from "@/lib/authorize";
+import type { Metadata } from "next";
 import { getFamilyDashboardData } from "./actions";
 import FamilyExpensesDashboardPage from "@/features/dashboard/pages/FamilyExpensesDashboardPage";
+
+export const metadata: Metadata = {
+   title: "Dashboard",
+   description:
+      "View your family financial dashboard with expense trends, income summaries, and predictive insights.",
+};
 
 interface DashboardPageProps {
    searchParams: Promise<{

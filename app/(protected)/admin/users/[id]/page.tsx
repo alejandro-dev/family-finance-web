@@ -3,8 +3,8 @@ import UserAnalyticsClient from "@/features/users/components/analytics/UserAnaly
 import { getUserAnalyticsInitialData, getUserAnalyticsUserMetaAction } from "./actions";
 
 export const metadata: Metadata = {
-   title: "User Management | Admin Dashboard",
-   description: "User administration panel",
+   title: "User analytics",
+   description: "Inspect a user's analytics, expenses, and family context from the admin section.",
 };
 
 interface PageProps {

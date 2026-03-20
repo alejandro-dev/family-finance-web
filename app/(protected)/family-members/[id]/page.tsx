@@ -1,7 +1,14 @@
 import InfoFamilyMemberPage from "@/features/family-members/pages/InfoFamilyMemberPage";
+import type { Metadata } from "next";
 import { requireUser } from "@/lib/authorize";
 import { getCategoryOptions, getTotalExpenses, searchFamilyMemberId } from "./actions";
 import { searchMyExpensesAction } from "@/app/(protected)/expenses/actions";
+
+export const metadata: Metadata = {
+   title: "Family member details",
+   description:
+      "Review a family member profile, expense analytics, and related transactions in Family Finance.",
+};
 
 interface FamilyMemberDetailPageProps {
    params: Promise<{ id: string }>;

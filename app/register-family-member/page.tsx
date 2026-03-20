@@ -2,9 +2,8 @@ import RegisterFamilyMember from "@/features/register-family-member/pages/Regist
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Next.js SignUp Page | TailAdmin - Next.js Dashboard Template",
-  description: "This is Next.js SignUp Page TailAdmin Dashboard Template",
-  // other metadata
+  title: "Register family member",
+  description: "Complete the invitation process and join your family workspace in Family Finance.",
 };
 
 export default function SignUp() {

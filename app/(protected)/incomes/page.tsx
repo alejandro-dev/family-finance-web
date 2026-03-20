@@ -1,4 +1,5 @@
 import { requireUser } from "@/lib/authorize";
+import type { Metadata } from "next";
 import IncomesPage from "@/features/incomes/pages/IncomesPage";
 import {
    getCategoryOptions,
@@ -6,6 +7,12 @@ import {
    searchMyIncomeRulesAction,
    searchMyIncomesAction,
 } from "./actions";
+
+export const metadata: Metadata = {
+   title: "Incomes",
+   description:
+      "Track one-time and recurring income sources for your family budget in Family Finance.",
+};
 
 export default async function Incomes() {
    // Verificamos si el usuario está autenticado.

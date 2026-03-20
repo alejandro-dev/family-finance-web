@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { searchCategories } from "./actions";
 
 export const metadata: Metadata = {
-	title: "Category Management | Admin Dashboard",
-	description: "Category administration panel",
+	title: "Category management",
+	description: "Administer expense and income categories used across the Family Finance workspace.",
 };
 
 export default async function Categories() {	

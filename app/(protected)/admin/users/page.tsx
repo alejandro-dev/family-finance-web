@@ -3,8 +3,8 @@ import UsersPage from "@/features/users/pages/UsersPage";
 import { searchUsers } from "./actions";
 
 export const metadata: Metadata = {
-	title: "User Management | Admin Dashboard",
-	description: "User administration panel",
+	title: "User management",
+	description: "Review and manage platform users from the Family Finance administration area.",
 };
 
 export default async function Users() {
