@@ -1,8 +1,19 @@
 import './globals.css';
 import "flatpickr/dist/flatpickr.css";
+import type { Metadata } from "next";
 import { SidebarProvider } from '@/context/SidebarContext';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { GlobalToastProvider } from '@/components/ui/alert';
+
+export const metadata: Metadata = {
+   metadataBase: new URL("https://family-finance.local"),
+   title: {
+      default: "Family Finance",
+      template: "%s | Family Finance",
+   },
+   description:
+      "Family Finance es una aplicacion para gestionar gastos, ingresos, miembros de la familia y seguimiento financiero desde un unico panel.",
+};
 
 const themeScript = `
   (function() {

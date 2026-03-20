@@ -3,8 +3,8 @@ import VerifyEmailSuccess from "@/features/auth/pages/VerifyEmail";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Verification Successful | Family Finance",
-  description: "Your account has been verified successfully",
+  title: "Email verified",
+  description: "Confirm that your Family Finance account email has been verified successfully.",
 };
 
 export default function VerifyEmail() {

@@ -2,9 +2,8 @@ import SignUpForm from "@/features/auth/pages/AuthRegister";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Next.js SignUp Page | TailAdmin - Next.js Dashboard Template",
-  description: "This is Next.js SignUp Page TailAdmin Dashboard Template",
-  // other metadata
+  title: "Create account",
+  description: "Create your Family Finance account and start managing your family budget, expenses, and shared income.",
 };
 
 export default function SignUp() {

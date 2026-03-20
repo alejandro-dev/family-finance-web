@@ -5,9 +5,9 @@ import { getCurrentUser } from "@/lib/auth";
 import ProfilePage from "@/features/profile/pages/ProfilePage";
 
 export const metadata: Metadata = {
-   title: "Next.js Profile | TailAdmin - Next.js Dashboard Template",
+   title: "Profile",
    description:
-      "This is Next.js Profile page for TailAdmin - Next.js Tailwind CSS Admin Dashboard Template",
+      "Review and update your personal profile information in Family Finance.",
 };
 
 export default async function Profile() {
