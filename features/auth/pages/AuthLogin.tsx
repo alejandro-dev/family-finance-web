@@ -31,12 +31,6 @@ export default function SignInForm() {
                      <p className="font-medium">Demo credentials</p>
                      <p className="mt-1">{demoUser.email}</p>
                      <p className="mt-1">Any changes inside the app are simulated and won&apos;t be saved.</p>
-                     <Link
-                        href="/dashboard"
-                        className="mt-3 inline-flex rounded-lg bg-amber-500 px-3 py-2 text-sm font-medium text-white transition hover:bg-amber-600"
-                     >
-                        Enter Demo Instantly
-                     </Link>
                   </div>
                )}
                <div>
