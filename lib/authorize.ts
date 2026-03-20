@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth";
+import { isDemoMode } from "@/lib/demo";
 
 // Función para verificar si el usuario está autenticado y redireccionar si no lo está.
 export async function requireUser() {
@@ -18,6 +19,8 @@ export async function requireAdmin() {
 
 // Función para proteger si no es admin y redirigir a la página de inicio de sesión.
 export async function requireAdminApi() {
+   if (isDemoMode) return null;
+
    const user = await getCurrentUser();
 
    // Si el usuario no está autenticado, redirigimos al inicio de sesión.

@@ -1,9 +1,28 @@
 import { NextResponse } from "next/server";
+import { isDemoMode } from "@/lib/demo";
 
 export async function POST(req: Request) {
    const body = await req.json();
 
+   if (isDemoMode) {
+      return NextResponse.json({
+         ok: true,
+         message: "Demo mode: account creation simulated successfully.",
+         submittedEmail: body?.email ?? null,
+      });
+   }
+
    try{
+      if (!process.env.SPRING_API_URL) {
+         return NextResponse.json(
+            {
+               error: "SPRING_API_URL is not configured",
+               status: 500,
+            },
+            { status: 500 }
+         );
+      }
+
       // Realizar la solicitud al backend de Spring Boot
       const res = await fetch(`${process.env.SPRING_API_URL}/auth/register`, {
          method: "POST",

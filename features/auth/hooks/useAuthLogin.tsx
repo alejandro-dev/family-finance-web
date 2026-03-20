@@ -5,11 +5,15 @@ import { useRouter } from "next/navigation";
 import { AuthLoginInput, login } from "@/services/authService";
 import ToastService from "@/services/toastService";
 import useMutation from "@/hooks/useMutation";
+import { demoUser, isDemoMode } from "@/lib/demo";
 
 export const useAuthLogin = () => {
    const router = useRouter();
    const [showPassword, setShowPassword] = useState(false);
-   const [credentials, setCredentials] = useState({ email: '', password: '' });
+   const [credentials, setCredentials] = useState({
+      email: isDemoMode ? demoUser.email : "",
+      password: isDemoMode ? "demo-access" : "",
+   });
 
    // Almacenar lo que el usuario escribe en el state
    const readData = (e: ChangeEvent<HTMLInputElement>) => {

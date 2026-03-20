@@ -1,13 +1,8 @@
-import { Outfit } from 'next/font/google';
 import './globals.css';
 import "flatpickr/dist/flatpickr.css";
 import { SidebarProvider } from '@/context/SidebarContext';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { GlobalToastProvider } from '@/components/ui/alert';
-
-const outfit = Outfit({
-   subsets: ["latin"],
-});
 
 const themeScript = `
   (function() {
@@ -27,7 +22,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
          <head>
             <script dangerouslySetInnerHTML={{ __html: themeScript }} />
          </head>
-         <body className={`${outfit.className} bg-white dark:bg-gray-900`}>
+         <body className="bg-white [font-family:Avenir_Next,Montserrat,Segoe_UI,sans-serif] dark:bg-gray-900">
             <ThemeProvider>
                <SidebarProvider>
                   <GlobalToastProvider>

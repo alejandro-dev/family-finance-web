@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { isDemoMode } from "@/lib/demo";
 
 // Rutas públicas de autenticación.
 const AUTH_ROUTES = new Set([
@@ -113,6 +114,10 @@ function clearAuthCookies(response: NextResponse) {
 
 // Función para verificar la autenticidad del token JWT.
 export function middleware(req: NextRequest) {
+   if (isDemoMode) {
+      return NextResponse.next();
+   }
+
    const { pathname, search } = req.nextUrl;
    const token = req.cookies.get("token")?.value;
    const roleFromCookie = getRoleFromCookie(req);

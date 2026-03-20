@@ -1,9 +1,43 @@
 import { NextResponse } from "next/server";
+import { DEMO_AUTH_TOKEN, isDemoMode } from "@/lib/demo";
 
 export async function POST(req: Request) {
    const body = await req.json();
 
+   if (isDemoMode) {
+      const response = NextResponse.json({
+         isAdmin: false,
+         token: DEMO_AUTH_TOKEN,
+         message: "Demo mode login successful.",
+      });
+
+      response.cookies.set("token", DEMO_AUTH_TOKEN, {
+         httpOnly: true,
+         sameSite: "lax",
+         secure: process.env.NODE_ENV === "production",
+         path: "/",
+      });
+      response.cookies.set("role", "user", {
+         httpOnly: true,
+         sameSite: "lax",
+         secure: process.env.NODE_ENV === "production",
+         path: "/",
+      });
+
+      return response;
+   }
+
    try{
+      if (!process.env.SPRING_API_URL) {
+         return NextResponse.json(
+            {
+               error: "SPRING_API_URL is not configured",
+               status: 500,
+            },
+            { status: 500 }
+         );
+      }
+
       // Realizar la solicitud al backend de Spring Boot
       const res = await fetch(`${process.env.SPRING_API_URL}/auth/login`, {
          method: "POST",
