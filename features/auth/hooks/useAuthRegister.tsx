@@ -90,7 +90,7 @@ export const useAuthRegister = () => {
          !isChecked;
 
       if (hasErrors) {
-         ToastService.warning("Revisa los campos marcados en el formulario");
+         ToastService.warning("Please review the highlighted fields in the form");
          return false;
       }
 

@@ -65,7 +65,7 @@ export default function UserAnalyticsClient({
          {error && (
             <Alert
                variant="error"
-               title="No se pudieron cargar los datos"
+               title="The data could not be loaded"
                message={error.message}
             />
          )}

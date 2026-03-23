@@ -102,7 +102,7 @@ export default function RegisterFamilyMember() {
                            <DatePicker
                               id="birthDate"
                               name="birthDate"
-                              label="Fecha de nacimiento"
+                              label="Birth date"
                               placeholder="Select date"
                               onChange={handleBirthDateChange}
                               defaultDate={credentials.birthDate || undefined}

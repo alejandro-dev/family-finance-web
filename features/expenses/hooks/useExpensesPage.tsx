@@ -130,8 +130,8 @@ export const useExpensesPage = ({ initialData }: ExpensesPageProps) => {
          await createExpense(payload);
       },
       successMessage: selectedExpense?.id
-         ? "Gasto actualizado correctamente"
-         : "Gasto creado correctamente",
+         ? "Expense updated successfully"
+         : "Expense created successfully",
       onSuccess: async () => {
          closeModal();
          await refetch();
@@ -169,7 +169,7 @@ export const useExpensesPage = ({ initialData }: ExpensesPageProps) => {
       mutationFn: async ({ id }) => {
          await deleteExpense(id);
       },
-      successMessage: "Gasto eliminado correctamente",
+      successMessage: "Expense deleted successfully",
       onSuccess: async () => {
          closeDeleteModal();
          await refetch();

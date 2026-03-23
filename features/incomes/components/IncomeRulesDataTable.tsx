@@ -35,25 +35,25 @@ export default function IncomeRulesDataTable({
    return (
       <div className="rounded-2xl border border-gray-200 bg-white p-1 dark:border-gray-800 dark:bg-white/3 lg:p-2">
          <DataTable
-            title="Reglas recurrentes"
+            title="Recurring rules"
             data={rows}
             columns={[
-               { header: "Concepto", accessor: "description" },
+               { header: "Description", accessor: "description" },
                {
-                  header: "Importe",
+                  header: "Amount",
                   render: (row: IncomeRule) => `${row.amount.toFixed(2)} EUR`,
                },
                {
-                  header: "Familiar",
+                  header: "Member",
                   render: (row: IncomeRule) => row.familyMemberName || "-",
                },
                {
-                  header: "Fecha",
+                  header: "Date",
                   accessor: "date",
                },
                {
-                  header: "Estado",
-                  render: (row: IncomeRule) => (row.isActive ? "Activa" : "Inactiva"),
+                  header: "Status",
+                  render: (row: IncomeRule) => (row.isActive ? "Active" : "Inactive"),
                },
                ...(showActions
                   ? [
@@ -87,7 +87,7 @@ export default function IncomeRulesDataTable({
             totalPages={totalPages}
             pageSize={pageSize}
             totalItems={totalItems}
-            createButtonText="Nueva regla"
+            createButtonText="New rule"
             onPageChange={onPageChange}
             onPageSizeChange={onPageSizeChange}
             onCreate={canCreateRule}

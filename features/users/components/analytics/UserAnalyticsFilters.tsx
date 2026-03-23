@@ -38,14 +38,14 @@ export default function UserAnalyticsFilters({
    onFiltersChange,
 }: UserAnalyticsFiltersProps) {
    const categorySelectOptions: SelectOptions[] = [
-      { value: "all", label: "Todas" },
+      { value: "all", label: "All" },
       ...categoryOptions.map((category) => ({ value: category.id, label: category.name })),
    ];
 
    let memberSelectOptions: SelectOptions[] = [];
    if (familyMembers) {
       memberSelectOptions = [
-         { value: "all", label: "Todos" },
+         { value: "all", label: "All" },
          ...familyMembers.map((member) => ({ value: member.id, label: member.name })),
       ];
    }
@@ -62,9 +62,9 @@ export default function UserAnalyticsFilters({
    return (
       <section className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/3 lg:p-6">
          <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-lg font-semibold text-gray-800 dark:text-white/90">Filtros</h2>
+            <h2 className="text-lg font-semibold text-gray-800 dark:text-white/90">Filters</h2>
             <Button size="sm" variant="outline" onClick={handleClearFilters}>
-               Limpiar
+               Clear
             </Button>
          </div>
          {/* Filtros de alcance global que impactan total, chart y tabla de gastos. */}
@@ -73,7 +73,7 @@ export default function UserAnalyticsFilters({
                <DatePicker
                   key={`startDate-${startDate || "empty"}`}
                   id="startDate"
-                  label="Desde"
+                  label="From"
                   placeholder="Select date"
                   defaultDate={startDate || undefined}
                   onChange={(_, dateStr) => onFiltersChange({ startDate: dateStr })}
@@ -83,14 +83,14 @@ export default function UserAnalyticsFilters({
                <DatePicker
                   key={`endDate-${endDate || "empty"}`}
                   id="endDate"
-                  label="Hasta"
+                  label="To"
                   placeholder="Select date"
                   defaultDate={endDate || undefined}
                   onChange={(_, dateStr) => onFiltersChange({ endDate: dateStr })}
                />
             </div>
             <div>
-               <Label htmlFor="categoryFilter">Categoría</Label>
+               <Label htmlFor="categoryFilter">Category</Label>
                <div className="relative">
                   <Select
                      key={`category-${categoryFilter}`}
@@ -106,7 +106,7 @@ export default function UserAnalyticsFilters({
             </div>
             {familyMembers && (
                <div>
-                  <Label htmlFor="memberFilter">Miembro familiar</Label>
+                  <Label htmlFor="memberFilter">Family member</Label>
                   <div className="relative">
                      <Select
                         key={`member-${memberFilter}`}

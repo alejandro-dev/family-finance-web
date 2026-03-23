@@ -84,12 +84,12 @@ export default function IncomeVsExpensesChart({ year, points, isMockData = false
       <section className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/3 lg:p-6">
          <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
-               <h2 className="text-lg font-semibold text-gray-800 dark:text-white/90">Ingresos vs Gastos</h2>
-               <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">Comparativa mensual de ingresos y gastos durante {year}.</p>
+               <h2 className="text-lg font-semibold text-gray-800 dark:text-white/90">Income vs Expenses</h2>
+               <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">Monthly comparison of income and expenses during {year}.</p>
             </div>
             <div className="flex items-end gap-3">
                <div className="min-w-44">
-                  <Label htmlFor="income-vs-expenses-year-select">Año analytics</Label>
+                  <Label htmlFor="income-vs-expenses-year-select">Analytics year</Label>
                   <div className="relative">
                      <Select
                         id="income-vs-expenses-year-select"
@@ -104,20 +104,20 @@ export default function IncomeVsExpensesChart({ year, points, isMockData = false
                </div>
                {isMockData && (
                   <span className="mb-2 rounded-full border border-amber-300 bg-amber-100 px-3 py-1 text-xs text-amber-700 dark:border-amber-500/50 dark:bg-amber-500/10 dark:text-amber-300">
-                     Datos mock
+                     Mock data
                   </span>
                )}
             </div>
          </div>
 
          <div className="mb-3 flex items-center gap-5 text-xs text-gray-600 dark:text-gray-300">
-            <span className="inline-flex items-center gap-2">
-               <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
-               Ingresos
+               <span className="inline-flex items-center gap-2">
+                  <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
+               Income
             </span>
             <span className="inline-flex items-center gap-2">
                <span className="h-2.5 w-2.5 rounded-full bg-rose-500" />
-               Gastos
+               Expenses
             </span>
          </div>
 
@@ -125,7 +125,7 @@ export default function IncomeVsExpensesChart({ year, points, isMockData = false
             <svg
                viewBox={`0 0 ${chartWidth} ${chartHeight}`}
                role="img"
-               aria-label={`Gráfico comparativo de ingresos y gastos para ${year}`}
+               aria-label={`Income and expenses comparison chart for ${year}`}
                className="min-w-190"
             >
                {yTicks.map((tick, index) => {

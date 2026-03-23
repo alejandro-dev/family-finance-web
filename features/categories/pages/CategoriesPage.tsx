@@ -36,7 +36,7 @@ export default function CategoriesPage({ initialData }: CategoriesPageProps) {
 
    return (
       <>
-         {error && ( ToastService.error("No se pudo cargar el listado") )}
+         {error && ( ToastService.error("The list could not be loaded") )}
 
          <div className="overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-white/5 dark:bg-white/3">
             <CategoriesTable

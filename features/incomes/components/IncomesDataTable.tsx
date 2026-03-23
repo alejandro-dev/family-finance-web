@@ -38,28 +38,28 @@ export default function IncomesDataTable({
             title="Incomes"
             data={rows}
             columns={[
-               { header: "Concepto", accessor: "description" },
+               { header: "Description", accessor: "description" },
                {
-                  header: "Importe",
+                  header: "Amount",
                   render: (row: Income) => `${row.amount.toFixed(2)} EUR`,
                },
                {
-                  header: "Origen",
+                  header: "Source",
                   render: (row: Income) => {
                      if (row.sourceType === "RECURRING_OVERRIDE") {
-                        return "Ajuste";
+                        return "Override";
                      }
                      if (row.sourceType === "RECURRING_GENERATED") {
-                        return "Recurrente";
+                        return "Recurring";
                      }
                      return "Manual";
                   },
                },
                {
-                  header: "Familiar",
+                  header: "Member",
                   render: (row: Income) => row.familyMemberName || "-",
                },
-               { header: "Fecha", accessor: "date" },
+               { header: "Date", accessor: "date" },
                ...(showActions
                   ? [
                        {

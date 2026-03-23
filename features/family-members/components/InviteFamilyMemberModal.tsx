@@ -47,10 +47,10 @@ export default function InviteFamilyMemberModal({
          <div className="relative w-full rounded-3xl bg-white p-6 dark:bg-gray-900">
             <div className="mb-6">
                <h4 className="text-2xl font-semibold text-gray-800 dark:text-white/90">
-                  Invitar familiar
+                  Invite family member
                </h4>
                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Ingresa el email del familiar que deseas invitar a tu familia.
+                  Enter the email address of the family member you want to invite.
                </p>
             </div>
 
@@ -61,15 +61,15 @@ export default function InviteFamilyMemberModal({
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Ej. email@gmail.com"
+                  placeholder="E.g. email@gmail.com"
                   error={hasError}
-                  hint={hasError ? "El email es obligatorio" : undefined}
+                  hint={hasError ? "Email is required" : undefined}
                />
             </div>
 
             <div className="mt-6 flex items-center justify-end gap-3">
                <Button variant="outline" size="sm" onClick={handleClose} disabled={isLoading}>
-                  Cancelar
+                  Cancel
                </Button>
                <Button size="sm" onClick={handleSave} disabled={isLoading}>
                   {isLoading ? "Sending invitation..." : "Send invitation"}

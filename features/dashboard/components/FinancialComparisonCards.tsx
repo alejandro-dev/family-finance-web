@@ -25,14 +25,14 @@ export default function FinancialComparisonCards({
    return (
       <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
          <article className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/3">
-            <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Ingreso total</p>
+            <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Total income</p>
             <p className="mt-2 text-2xl font-semibold text-gray-800 dark:text-white/90">{formatCurrency(totalIncomeGlobal)}</p>
-            {isMockData && <p className="mt-1 text-xs text-amber-600 dark:text-amber-300">dato mock</p>}
+            {isMockData && <p className="mt-1 text-xs text-amber-600 dark:text-amber-300">mock data</p>}
          </article>
          <article className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/3">
-            <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Ingreso mes actual</p>
+            <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Current month income</p>
             <p className="mt-2 text-2xl font-semibold text-gray-800 dark:text-white/90">{formatCurrency(totalIncomeCurrentMonth)}</p>
-            {isMockData && <p className="mt-1 text-xs text-amber-600 dark:text-amber-300">dato mock</p>}
+            {isMockData && <p className="mt-1 text-xs text-amber-600 dark:text-amber-300">mock data</p>}
          </article>
          <article className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/3">
             <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Balance</p>
@@ -41,7 +41,7 @@ export default function FinancialComparisonCards({
             </p>
          </article>
          <article className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/3">
-            <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Tasa de ahorro</p>
+            <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Savings rate</p>
             <p className="mt-2 text-2xl font-semibold text-gray-800 dark:text-white/90">{savingsRate.toFixed(1)}%</p>
          </article>
       </section>

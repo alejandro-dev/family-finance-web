@@ -31,11 +31,11 @@ export default function DashboardFilters({
    const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
    const categoryOptions = [
-      { value: "all", label: "Todas" },
+      { value: "all", label: "All" },
       ...categories.map((category) => ({ value: category.id, label: category.name })),
    ];
    const memberOptions = [
-      { value: "all", label: "Todos" },
+      { value: "all", label: "All" },
       ...familyMembers.map((member) => ({ value: member.id, label: member.name })),
    ];
 
@@ -69,9 +69,9 @@ export default function DashboardFilters({
    return (
       <section className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/3 lg:p-6">
          <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-lg font-semibold text-gray-800 dark:text-white/90">Filtros</h2>
+            <h2 className="text-lg font-semibold text-gray-800 dark:text-white/90">Filters</h2>
             <Button size="sm" variant="outline" onClick={handleClearFilters}>
-               Limpiar
+               Clear
             </Button>
          </div>
 
@@ -79,7 +79,7 @@ export default function DashboardFilters({
             <div>
                <DatePicker
                   id="dashboard-start-date"
-                  label="Desde"
+                  label="From"
                   placeholder="Select date"
                   defaultDate={filters.startDate || undefined}
                   onChange={(_, dateStr) => scheduleDateUpdate("startDate", dateStr)}
@@ -88,7 +88,7 @@ export default function DashboardFilters({
             <div>
                <DatePicker
                   id="dashboard-end-date"
-                  label="Hasta"
+                  label="To"
                   placeholder="Select date"
                   defaultDate={filters.endDate || undefined}
                   onChange={(_, dateStr) => scheduleDateUpdate("endDate", dateStr)}
@@ -110,7 +110,7 @@ export default function DashboardFilters({
                </div>
             </div>
             <div>
-               <Label htmlFor="dashboard-member">Familiar</Label>
+               <Label htmlFor="dashboard-member">Family member</Label>
                <div className="relative">
                   <Select
                      id="dashboard-member"

@@ -84,13 +84,13 @@ export default function FamilyMemberModal({
             </div>
 
             <div>
-               <Label htmlFor="name">Nombre</Label>
+               <Label htmlFor="name">Name</Label>
                <Input
                   id="name"
                   name="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Ej. Netflix, Supermercado, etc."
+                  placeholder="E.g. Alex, Emma, etc."
                   error={nameError}
                   hint={nameError ? "Name is required" : undefined}
                />
@@ -100,7 +100,7 @@ export default function FamilyMemberModal({
                <DatePicker
                   key={`birthDate-${resetKey}-${isOpen ? "open" : "closed"}`}
                   id="birthDate"
-                  label="Fecha de nacimiento"
+                  label="Birth date"
                   placeholder="Select date"
                   defaultDate={birthDate || undefined}
                   onChange={(_, birthDateStr) => setBirthDate(birthDateStr)}
@@ -119,12 +119,12 @@ export default function FamilyMemberModal({
                            name="email"
                            value={familyMember?.email ?? ""}
                            disabled
-                           placeholder="Ej. email@gmail.com"
+                           placeholder="E.g. email@gmail.com"
                         />
                      </div>
                   ) : null}
                   <div>
-                     <Label>Estado</Label>
+                     <Label>Status</Label>
                      <div className="relative">
                         <Select
                            key={`status-${resetKey}-${isOpen ? "open" : "closed"}`}
@@ -145,7 +145,7 @@ export default function FamilyMemberModal({
 
             <div className="mt-6 flex items-center justify-end gap-3">
                <Button variant="outline" size="sm" onClick={onClose} disabled={isLoading}>
-                  Cancelar
+                  Cancel
                </Button>
                <Button size="sm" onClick={handleSave} disabled={isLoading}>
                   {isLoading ? "Saving..." : isEditMode ? "Save changes" : "Create family member"}

@@ -3,6 +3,7 @@ import ListIcon from "@/icons/table.svg";
 import UsersIcon from "@/icons/users.svg";
 import GridIcon from "@/icons/grid.svg";
 import ChevronDownIcon from "@/icons/chevron-down.svg";
+import DollarLineIcon from "@/icons/dollar-line.svg";
 
 export type IconComponent = FC<SVGProps<SVGSVGElement>>;
 
@@ -30,7 +31,7 @@ export const mainNavItems: NavItem[] = [
 		path: "/expenses",
 	},
 	{
-		icon: ListIcon,
+		icon: DollarLineIcon,
 		name: "Incomes",
 		path: "/incomes",
 	},

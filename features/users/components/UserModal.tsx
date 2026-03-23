@@ -95,7 +95,7 @@ export default function UserModal({
                   <Input
                      id="email"
                      name="email"
-                     placeholder="Ej. user@email.com"
+                     placeholder="E.g. user@email.com"
                      disabled={isEditMode ? true : false}
                      value={user?.email}
                   />
@@ -106,7 +106,7 @@ export default function UserModal({
                      id="username"
                      name="username"
                      disabled={isEditMode ? true : false}
-                     placeholder="Ej. jdoe"
+                     placeholder="E.g. jdoe"
                      value={user?.username}
                   />
                </div>
@@ -146,7 +146,7 @@ export default function UserModal({
 
             <div className="mt-6 flex items-center justify-end gap-3">
                <Button variant="outline" size="sm" onClick={onClose} disabled={isLoading}>
-                  Cancelar
+                  Cancel
                </Button>
                <Button size="sm" onClick={handleSave} disabled={isLoading}>
                   {isLoading ? "Saving..." : isEditMode ? "Save changes" : "Create user"}

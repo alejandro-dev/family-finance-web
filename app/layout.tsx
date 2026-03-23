@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       template: "%s | Family Finance",
    },
    description:
-      "Family Finance es una aplicacion para gestionar gastos, ingresos, miembros de la familia y seguimiento financiero desde un unico panel.",
+      "Family Finance is an application for managing expenses, income, family members, and financial tracking from a single dashboard.",
 };
 
 const outfit = Outfit({

@@ -100,8 +100,8 @@ export const useFamilyMembers = ({ initialData, familyId }: FamilyMembersPagePro
          await createFamilyMember(payload);
       },
       successMessage: selectedFamilyMember?.id
-         ? "Familiar actualizado correctamente"
-         : "Familiar creado correctamente",
+         ? "Family member updated successfully"
+         : "Family member created successfully",
       onSuccess: async () => {
          closeModal();
          await refetch();

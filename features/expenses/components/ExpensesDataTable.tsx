@@ -43,14 +43,14 @@ export default function ExpensesDataTable({
             title="Expenses"
             data={rows}
             columns={[
-               { header: "Concepto", accessor: "description" },
+               { header: "Description", accessor: "description" },
                { header: "Category", accessor: "categoryName" },
                {
-                  header: "Importe",
+                  header: "Amount",
                   render: (row) => `${row.amount.toFixed(2)} EUR`,
                },
-               { header: "Miembro", accessor: "familyMemberName" },
-               { header: "Fecha", accessor: "date" },
+               { header: "Member", accessor: "familyMemberName" },
+               { header: "Date", accessor: "date" },
                ...(showActions ? [{
                   header: "Actions",
                   render: (expense: Expense) => (

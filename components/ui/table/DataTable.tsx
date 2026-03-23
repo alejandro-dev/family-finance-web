@@ -45,7 +45,7 @@ export function DataTable<T>({
    totalPages,
    pageSize,
    totalItems,
-   createButtonText = "Nuevo",
+   createButtonText = "New",
    searchPlaceholder = "Search...",
    title = "Data",
    onCreate = false,
@@ -97,7 +97,7 @@ export function DataTable<T>({
                   {onInviteFamilyMember && (
                      <div className="flex-none justify-end px-4">
                         <Button size="sm" onClick={onInviteFamilyMember}>
-                           Invitar familiar
+                           Invite family member
                         </Button>
                      </div>
                   )}
