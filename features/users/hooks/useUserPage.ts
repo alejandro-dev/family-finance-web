@@ -80,7 +80,7 @@ export const useUserPage = ({ initialData }: UsersPageProps) => {
 			if (!selectedUser?.id) return;
 			await updateUser(selectedUser.id, payload);
 		},
-		successMessage: "Usuario actualizado correctamente",
+		successMessage: "User updated successfully",
 		onSuccess: async () => {
 			closeModal();
 			await refetch();
@@ -92,7 +92,7 @@ export const useUserPage = ({ initialData }: UsersPageProps) => {
 		mutationFn: async ({ id }) => {
 			await deleteUser(id);
 		},
-		successMessage: "Usuario eliminado correctamente",
+		successMessage: "User deleted successfully",
 		onSuccess: async () => {
 			closeDeleteModal();
 			await refetch();

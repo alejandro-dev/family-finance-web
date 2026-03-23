@@ -23,19 +23,19 @@ export default function DeleteCategoryModal({
       <Modal isOpen={isOpen} onClose={onCancel} className="max-w-lg m-4">
          <div className="relative w-full rounded-3xl bg-white p-6 dark:bg-gray-900">
             <h4 className="text-2xl font-semibold text-gray-800 dark:text-white/90">
-               Confirmar eliminación
+               Confirm deletion
             </h4>
             <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
-               ¿Seguro que quieres eliminar la categoría{" "}
+               Are you sure you want to delete the category{" "}
                <span className="font-semibold text-gray-700 dark:text-gray-200">
                   {category?.name ?? ""}
                </span>
-               ? Esta acción no se puede deshacer.
+               ? This action cannot be undone.
             </p>
 
             <div className="mt-6 flex items-center justify-end gap-3">
                <Button variant="outline" size="sm" onClick={onCancel} disabled={isLoading}>
-                  Cancelar
+                  Cancel
                </Button>
                <Button
                   size="sm"
@@ -43,7 +43,7 @@ export default function DeleteCategoryModal({
                   onClick={onConfirm}
                   disabled={isLoading}
                >
-                  {isLoading ? "Eliminando..." : "Eliminar"}
+                  {isLoading ? "Deleting..." : "Delete"}
                </Button>
             </div>
          </div>

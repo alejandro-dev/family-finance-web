@@ -42,7 +42,7 @@ export const useProfilePage = () => {
       const hasErrors = password.length < 6 || confirmPassword.length < 6;
 
       if (hasErrors) {
-         ToastService.warning("Revisa los campos marcados en el formulario");
+         ToastService.warning("Please review the highlighted fields in the form");
          return false;
       }
 

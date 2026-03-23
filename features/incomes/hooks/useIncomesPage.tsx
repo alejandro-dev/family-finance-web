@@ -152,7 +152,7 @@ export const useIncomesPage = ({ initialIncomes, initialRules }: IncomesPageProp
 
          await createIncome(payload);
       },
-      successMessage: selectedIncome?.id ? "Ingreso actualizado correctamente" : "Ingreso creado correctamente",
+      successMessage: selectedIncome?.id ? "Income updated successfully" : "Income created successfully",
       onSuccess: async () => {
          closeIncomeModal();
          await refetchIncomes();
@@ -181,7 +181,7 @@ export const useIncomesPage = ({ initialIncomes, initialRules }: IncomesPageProp
       mutationFn: async ({ id }) => {
          await deleteIncome(id);
       },
-      successMessage: "Ingreso eliminado correctamente",
+      successMessage: "Income deleted successfully",
       onSuccess: async () => {
          closeDeleteIncomeModal();
          await refetchIncomes();
@@ -223,7 +223,7 @@ export const useIncomesPage = ({ initialIncomes, initialRules }: IncomesPageProp
 
          await createIncomeRule(payload);
       },
-      successMessage: selectedRule?.id ? "Regla actualizada correctamente" : "Regla creada correctamente",
+      successMessage: selectedRule?.id ? "Rule updated successfully" : "Rule created successfully",
       onSuccess: async () => {
          closeRuleModal();
          await refetchRules();
@@ -253,7 +253,7 @@ export const useIncomesPage = ({ initialIncomes, initialRules }: IncomesPageProp
       mutationFn: async ({ id }) => {
          await deleteIncomeRule(id);
       },
-      successMessage: "Regla eliminada correctamente",
+      successMessage: "Rule deleted successfully",
       onSuccess: async () => {
          closeDeleteRuleModal();
          await refetchRules();

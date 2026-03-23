@@ -28,7 +28,7 @@ export default function IncomesFilters({
 }: IncomesFiltersProps) {
    // Normalizamos opciones de familiar.
    const familyMemberSelectOptions = [
-      { value: "all", label: "Todos" },
+      { value: "all", label: "All" },
       ...familyMembersOptions.map((familyMember) => ({ value: familyMember.id, label: familyMember.name })),
    ];
 
@@ -44,9 +44,9 @@ export default function IncomesFilters({
    return (
       <section className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/3 lg:p-6">
          <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-lg font-semibold text-gray-800 dark:text-white/90">Filtros de ingresos</h2>
+            <h2 className="text-lg font-semibold text-gray-800 dark:text-white/90">Income filters</h2>
             <Button size="sm" variant="outline" onClick={handleClearFilters}>
-               Limpiar
+               Clear
             </Button>
          </div>
 
@@ -55,7 +55,7 @@ export default function IncomesFilters({
                <DatePicker
                   key={`income-start-${startDate || "empty"}`}
                   id="incomeStartDate"
-                  label="Desde"
+                  label="From"
                   placeholder="Select date"
                   defaultDate={startDate || undefined}
                   onChange={(_, dateStr) => onFiltersChange({ startDate: dateStr })}
@@ -65,14 +65,14 @@ export default function IncomesFilters({
                <DatePicker
                   key={`income-end-${endDate || "empty"}`}
                   id="incomeEndDate"
-                  label="Hasta"
+                  label="To"
                   placeholder="Select date"
                   defaultDate={endDate || undefined}
                   onChange={(_, dateStr) => onFiltersChange({ endDate: dateStr })}
                />
             </div>
             <div>
-               <Label htmlFor="income-family-member-filter">Familiar</Label>
+               <Label htmlFor="income-family-member-filter">Family member</Label>
                <div className="relative">
                   <Select
                      key={`income-member-${familyMemberIdFilter}`}

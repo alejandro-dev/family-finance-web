@@ -12,16 +12,16 @@ interface UseSidebarMenuProps {
 export const useSidebarMenu = ({ items, menuType }: UseSidebarMenuProps) => {
 	const pathname = usePathname();
 
-	// Estado que controla el submenu abierto manualmente por el usuario
+	// Tracks the submenu manually opened by the user
 	const [manualOpenSubmenu, setManualOpenSubmenu] = useState<{
 		type: "user" | "admin";
 		index: number;
 	} | null>(null);
 
-	// Referencias a los submenus para poder calcular su altura
+	// Stores submenu refs so their rendered height can be measured
 	const subMenuRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
-	// Determinar si algún submenu coincide con la ruta actual
+	// Detect whether any submenu matches the current route
 	const activeSubmenu = useMemo(() => {
 		for (const [index, nav] of items.entries()) {
 			if (!nav.subItems) continue;
@@ -30,50 +30,47 @@ export const useSidebarMenu = ({ items, menuType }: UseSidebarMenuProps) => {
 				(subItem) => subItem.path === pathname
 			);
 
-			// Si encontramos un subitem que coincide con la ruta actual,
-			// abrimos automáticamente ese submenu
+			// Automatically open the submenu that contains the active route
 			if (hasActiveSubitem) {
 				return { type: menuType, index } as const;
 			}
 		}
 
-		// Si ningún submenu coincide con la ruta, no hay submenu activo por ruta
+		// No route-matched submenu is active
 		return null;
 	}, [items, menuType, pathname]);
 
-	// El submenu abierto será:
-	// 1️⃣ El que coincida con la ruta actual
-	// 2️⃣ Si no hay coincidencia, el que haya abierto el usuario manualmente
+	// Prefer the route-matched submenu, otherwise keep the manually opened one
 	const openSubmenu = activeSubmenu ?? manualOpenSubmenu;
 
-	// Comprobar si una ruta está activa
+	// Check whether a route is active
 	const isActive = (path: string) => path === pathname;
 
-	// Manejador para abrir/cerrar un submenu manualmente
+	// Toggle a submenu manually
 	const handleSubmenuToggle = (index: number, type: "user" | "admin") => {
 		setManualOpenSubmenu((prev) => {
-			// Si el submenu ya está abierto, cerrarlo
+			// Close it if the same submenu is already open
 			if (prev && prev.type === type && prev.index === index) {
 				return null;
 			}
 
-			// Si no está abierto, abrirlo
+			// Otherwise open the requested submenu
 			return { type, index };
 		});
 	};
 
-	// Guardar la referencia del submenu para poder calcular su altura
+	// Save the submenu ref for height calculations
 	const setSubMenuRef = (key: string) => (el: HTMLDivElement | null) => {
 		subMenuRefs.current[key] = el;
 	};
 
-	// Obtener la altura real del submenu para animaciones
+	// Read the actual submenu height for animations
 	const getSubMenuHeight = (menuType: "user" | "admin", index: number) => {
 		const key = `${menuType}-${index}`;
 		return subMenuRefs.current[key]?.scrollHeight ?? 0;
 	};
 
-	// Comprobar si un submenu está abierto
+	// Check whether a submenu is open
 	const isSubmenuOpen = (menuType: "user" | "admin", index: number) => {
 		return openSubmenu?.type === menuType && openSubmenu?.index === index;
 	};

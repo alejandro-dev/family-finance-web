@@ -40,7 +40,7 @@ export default function FamilyMembersPage({ initialData, familyId }: FamilyMembe
 
    return (
       <>
-         {error && ( ToastService.error("No se pudo cargar el listado") )}
+         {error && ( ToastService.error("The list could not be loaded") )}
 
          <div className="space-y-6">
             <FamilyMembersDataTable
